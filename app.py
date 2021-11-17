@@ -1,12 +1,12 @@
 from flask import Flask, render_template, request
 from predict import predict_user
 from twitter import add_or_update_user, get_all_usernames
-from models import db, Tweet, User
+from models import db, User
+
+app = Flask(__name__)
 
 
 def create_app():
-
-    app = Flask(__name__)
 
     # Database Configurations
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
